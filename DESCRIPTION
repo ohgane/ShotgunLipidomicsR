@@ -1,10 +1,13 @@
 Package: ShotgunLipidomicsR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Utility Functions for Analysis/Visualization of ShotgunLipidomics Data.
 Version: 0.1
 Date: 2016-05-19
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Kenji OHGANE
+Maintainer: Kenji OHGANE <ohgane@me.com>
+Description: A personal utility package with a collection of functions for
+    analysis of direct-infusion mass spectrometry data. Focus is on shotgun
+    lipidomics data acquired on a Thermo LTQ-Orbitrap XL.
+License: MIT + file LICENSE
 LazyData: TRUE
+RoxygenNote: 5.0.1
