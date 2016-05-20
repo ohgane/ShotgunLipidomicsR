@@ -33,19 +33,26 @@ extractScanInfo=function(path){
     if (msLevel != 1){
       precursorMz=xmlGetAttr(x[["precursorList"
                                 ]][["precursor"]][["isolationWindow"]][[1]], name="value")
+      precIsoWin=xmlGetAttr(x[["precursorList"
+                               ]][["precursor"]][["isolationWindow"]][[2]], name="value")
       selectedMz=xmlGetAttr(x[["precursorList"
                                ]][["precursor"]][["selectedIonList"]][["selectedIon"]][[1]],
                             name="value")
+      charge=xmlGetAttr(x[["precursorList"
+                           ]][["precursor"]][["selectedIonList"]][["selectedIon"]][[2]],
+                        name="value")
       activation=xmlGetAttr(x[["precursorList"]][["precursor"]][["activation"]][[1]],
                             name="name")
       nCE=xmlGetAttr(x[["precursorList"]][["precursor"]][["activation"]][[2]], name="value")
     } else {
       precursorMz=NA
+      precIsoWin=NA
       selectedMz=NA
+      charge=NA
       activation=NA
       nCE=NA
     }
-    return(c(scan, msLevel, precursorMz, selectedMz, activation, nCE,
+    return(c(scan, msLevel, precursorMz, precIsoWin, selectedMz, charge, activation, nCE,
              TIC, basePeakMz, basePeakInt, injectionTime, scanStartTime, scanfilter))
   }
 
@@ -53,15 +60,17 @@ extractScanInfo=function(path){
   scanfilter=data.frame(scan=as.numeric(temp[,1]),
                         msLevel=as.numeric(temp[,2]),
                         precursorMz=as.numeric(temp[,3]),
-                        selectedMz=as.numeric(temp[,4]),
-                        activation=temp[,5],
-                        nCE=as.numeric(temp[,6]),
-                        TIC=as.numeric(temp[,7]),
-                        basePeakMz=as.numeric(temp[,8]),
-                        basePeakInt=as.numeric(temp[,9]),
-                        injectionTime=as.numeric(temp[,10]),
-                        scanStartTime=as.numeric(temp[,11]),
-                        scanfilter=temp[,12],
+                        isolationWindow=as.numeric(temp[,4]*2),
+                        selectedMz=as.numeric(temp[,5]),
+                        charge=as.numeric(temp[,6]),
+                        activation=temp[,7],
+                        nCE=as.numeric(temp[,8]),
+                        TIC=as.numeric(temp[,9]),
+                        basePeakMz=as.numeric(temp[,10]),
+                        basePeakInt=as.numeric(temp[,11]),
+                        injectionTime=as.numeric(temp[,12]),
+                        scanStartTime=as.numeric(temp[,13]),
+                        scanfilter=temp[,14],
                         stringsAsFactors=FALSE)
   return(scanfilter)
 }

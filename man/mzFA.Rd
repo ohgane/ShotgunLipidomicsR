@@ -4,15 +4,13 @@
 \alias{mzFA}
 \title{Calculate exact mass for fatty acid}
 \usage{
-mzFA(n, m = NULL, z = -1, digits = 4)
+mzFA(n, m = NULL, digits = 4)
 }
 \arguments{
 \item{n}{The number of carbon. A vector of length 2 (n,m) can also be used.
 In that case, \code{m} must be the default value \code{NULL}.}
 
 \item{m}{The number of double bond. Default, \code{NULL}.}
-
-\item{z}{Charge (default -1)}
 
 \item{digits}{Decimal point (default 4)}
 }
@@ -21,6 +19,6 @@ This function calculate exact mass for fatty acid [n:m].
 }
 \examples{
 # Exact mass of FA[18:1] anion (281.2486).
-mzFA(18:1)
+mzFA(18, 1)
 }
 
