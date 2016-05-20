@@ -60,7 +60,7 @@ extractScanInfo=function(path){
   scanfilter=data.frame(scan=as.numeric(temp[,1]),
                         msLevel=as.numeric(temp[,2]),
                         precursorMz=as.numeric(temp[,3]),
-                        isolationWindow=as.numeric(temp[,4]*2),
+                        isolationWindow=round(as.numeric(temp[,4])*2, digits=3),
                         selectedMz=as.numeric(temp[,5]),
                         charge=as.numeric(temp[,6]),
                         activation=temp[,7],
