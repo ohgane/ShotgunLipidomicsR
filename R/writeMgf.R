@@ -6,7 +6,7 @@
 #' @param charge Charge of the precursor. Character (default "+1").
 #'
 #' @export
-write.mgf=function(file, precursor, peak.table, charge="+1"){
+writeMgf=function(file, precursor, peak.table, charge="+1"){
   out.file <- file(file, open = "w")
   writeLines("BEGIN IONS", out.file)
   writeLines(paste("PEPMASS=", precursor, sep=""), out.file)

@@ -7,7 +7,7 @@
 #'
 #' @export
 
-convert.xFrag2Mgf=function(xfrag){
+convertXFrag2Mgf=function(xfrag){
   MS1=xfrag@peaks[xfrag@peaks[, "msLevel"]==1,]
   MS2=xfrag@peaks[xfrag@peaks[, "msLevel"]==2,]
   mgf=list(1:nrow(MS1))

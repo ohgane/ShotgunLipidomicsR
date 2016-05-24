@@ -30,7 +30,7 @@
 #'    returns the averaged spectrum as a data frame.
 #'
 #' @export
-plot.avgMS1=function(xcmsraw, normalization="constant", int.divide=1000,
+plotAvgMS1=function(xcmsraw, normalization="constant", int.divide=1000,
                      col=1, type="l",
                      plot.precursor=TRUE,
                      custom.precursor=NULL,

@@ -21,7 +21,7 @@
 #'      scan numbers, NULL is returned.
 #'
 #' @export
-plot.avgMS2=function(xcmsraw, mz=NULL, scanNum=NULL, mzabs=0.1, digits=4, mzrange=NULL,
+plotAvgMS2=function(xcmsraw, mz=NULL, scanNum=NULL, mzabs=0.1, digits=4, mzrange=NULL,
                      halfWindowSize=NULL, SNR=5, top=10, noisePeaks=NULL, ...){
   require(MALDIquant)
   require(xcms)
