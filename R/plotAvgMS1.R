@@ -31,16 +31,16 @@
 #'
 #' @export
 plotAvgMS1=function(xcmsraw, normalization="constant", int.divide=1000,
-                     col=1, type="l",
-                     plot.precursor=TRUE,
-                     custom.precursor=NULL,
-                     col.precursor="light blue",
-                     lwd.precursor=2, lty.precursor=1,
-                     baseline=FALSE,
-                     col.baseline="gray50", lty.baseline=1,
-                     scans=NULL, mzrange=NULL, ylim=NULL,
-                     ad.lab.mzrange=NA, ad.top=3,
-                     top=12, halfWindowSize=NULL, SNR=50, digits=4, ...){
+                    col=1, type="l",
+                    plot.precursor=TRUE,
+                    custom.precursor=NULL,
+                    col.precursor="light blue",
+                    lwd.precursor=2, lty.precursor=1,
+                    baseline=FALSE,
+                    col.baseline="gray50", lty.baseline=1,
+                    scans=NULL, mzrange=NULL, ylim=NULL,
+                    ad.lab.mzrange=NA, ad.top=3,
+                    top=12, halfWindowSize=NULL, SNR=50, digits=4, ...){
   require(MALDIquant)
   require(xcms)
   # Intensity normalization with a fixed value or TIC
