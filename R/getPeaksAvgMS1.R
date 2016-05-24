@@ -64,5 +64,9 @@ getPeaksAvgMS1=function(xcmsraw,
       topN=topN|topN.ad
     }
   }
-  return(peaks[topN,])
+  # Select Top N peaks from a MassPeaks object
+  peaks=peaks[topN,]
+  # Convert MassPeaks object into a dataframe
+  res_df=data.frame(mz=peaks@mass, intensity=peaks@intensity, snr=peaks@snr)
+  return(res_df)
 }
