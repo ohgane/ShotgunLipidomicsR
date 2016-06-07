@@ -38,12 +38,28 @@ extractScanInfo=function(path){
       selectedMz=xmlGetAttr(x[["precursorList"
                                ]][["precursor"]][["selectedIonList"]][["selectedIon"]][[1]],
                             name="value")
-      charge=xmlGetAttr(x[["precursorList"
+      # Use try(function, silent=TRUE) to catch error
+      e=try(
+        xmlGetAttr(x[["precursorList"
                            ]][["precursor"]][["selectedIonList"]][["selectedIon"]][[2]],
-                        name="value")
+                        name="value"), silent=TRUE
+      )
+      if (class(e)=="try-error"){
+        charge=NA
+      } else {
+        charge=e
+      }
       activation=xmlGetAttr(x[["precursorList"]][["precursor"]][["activation"]][[1]],
                             name="name")
-      nCE=xmlGetAttr(x[["precursorList"]][["precursor"]][["activation"]][[2]], name="value")
+      e=try(
+        xmlGetAttr(x[["precursorList"]][["precursor"]][["activation"]][[2]], name="value"),
+        silent=TRUE
+      )
+      if (class(e)=="try-error"){
+        nCE=NA
+      } else {
+        nCE=e
+      }     
     } else {
       precursorMz=NA
       precIsoWin=NA

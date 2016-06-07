@@ -92,7 +92,12 @@ plotAvgMS2=function(xcmsraw, mz=NULL, scanNum=NULL, mzabs=0.1, digits=4, mzrange
   labelPeaks(peaks, index=topLogical, underline=FALSE, col="blue",
              avoidOverlap=TRUE, srt=0, digits=digits)
   abline(v=PrecursorMz, col="blue")
-  title(main=paste("Precursor m/z: ", PrecursorMz, " Scan#: ", paste(scanNum, collapse="-")),
+  if (length(scanNum)>5){
+    scanNum=paste(range(scanNum), collapse="...")
+  } else {
+    scanNum=paste(scanNum, collapse="-") # List all the scan number
+  }
+  title(main=paste("Precursor m/z: ", PrecursorMz, " Scan#: ", scanNum),
         sub=inputfile,
         col.main="gray50", cex.main=1, font.main=1, col.sub="gray50", cex.sub=0.8, font.sub=1)
 
