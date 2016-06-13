@@ -4,7 +4,8 @@
 #'    data-dependent acquisition) and plot the spectrum and overlay colored lines over the precursors. Additionally, label some selected peaks.
 #'
 #' @param xcmsraw \code{xcmsRaw} object.
-#' @param normalization Logical.
+#' @param normalization Type of normalization for plotting. Default, "constant".
+#'    Either "constant", "relative", or "TIC" (% of total ion current).
 #' @param int.divide Intensity normalization factor (simple division). Default, 1000.
 #' @param col Default, 1 (=black).
 #' @param type Default, "l" (line).
@@ -52,6 +53,8 @@ plotAvgMS1=function(xcmsraw, normalization="constant", int.divide=1000,
         int.divide=mean(xcmsraw@tic[xcmsraw@acquisitionNum %in% scans])/100
       }
     }
+  } else if (normalization=="relative") {
+    int.divide=1
   } else {
     warning("The argument normalization must be either constant or TIC.
             Default value (constant, int.divide=1000) is used for intensity normalization.")
@@ -78,6 +81,10 @@ plotAvgMS1=function(xcmsraw, normalization="constant", int.divide=1000,
   }
   # Copy averaged MS1 spectrum (to return upon exit)
   spec_original=spec
+  # Normalization (for "relative")
+  if (normalization=="relative"){
+    spec$intensity=spec$intensity/max(spec$intensity)*100
+  }
   # Scale intensity
   spec$intensity=spec$intensity/int.divide
   # Set plot range for intensity axis (range expanded by 5%), if ylim is not provided
@@ -90,6 +97,8 @@ plotAvgMS1=function(xcmsraw, normalization="constant", int.divide=1000,
   #
   if (normalization == "TIC") {
     ylabel="Intensity / Total Ion Current (%)"
+  } else if (normalization == "relative") {
+    ylabel = "Relative intensity"
   } else {
     ylabel=paste("Intensity/", int.divide, " (a.u.)", sep="")
   }
