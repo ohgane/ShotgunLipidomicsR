@@ -15,20 +15,20 @@ plotAvgMS1(xcmsraw, normalization = "constant", int.divide = 1000,
 \arguments{
 \item{xcmsraw}{\code{xcmsRaw} object.}
 
-\item{normalization}{Type of normalization for plotting. Default, "constant".
-Either "constant", "relative", or "TIC" (% of total ion current).}
+\item{normalization}{Type of normalization for plotting.
+Default, constant. Either constant, relative, or TIC (relative to total ion current).}
 
 \item{int.divide}{Intensity normalization factor (simple division). Default, 1000.}
 
-\item{col}{Default, 1 (=black).}
+\item{col}{Default, 1 (black).}
 
-\item{type}{Default, "l" (line).}
+\item{type}{Default, l (line).}
 
 \item{plot.precursor}{Logical (default, TRUE). If true, plot lines at the precursor m/z values.}
 
 \item{custom.precursor}{Default, NULL.}
 
-\item{col.precursor}{Default, "light blue".}
+\item{col.precursor}{Default, light blue.}
 
 \item{lwd.precursor}{Default, 2.}
 
@@ -36,7 +36,7 @@ Either "constant", "relative", or "TIC" (% of total ion current).}
 
 \item{baseline}{Logical (default TRUE)}
 
-\item{col.baseline}{The color of baseline. Default, "gray50"}
+\item{col.baseline}{The color of baseline. Default, gray50}
 
 \item{lty.baseline}{Line type of baseine. Default, 1.}
 
@@ -50,16 +50,16 @@ Either "constant", "relative", or "TIC" (% of total ion current).}
 
 \item{top}{The number of peak labels.}
 
-\item{halfWindowSize}{See \code{MALDIquant::labelPeaks()} for detail.}
+\item{halfWindowSize}{See \code{labelPeaks} in \code{MALDIquant} for detail.}
 
-\item{SNR}{See \code{MALDIquant::labelPeaks()} for detail.}
+\item{SNR}{See \code{labelPeaks} in \code{MALDIquant} for detail.}
 
 \item{digits}{Digits for peak labels.}
 
 \item{ad.lab.}{mzrange m/z range to add additional peak labels.}
 }
 \value{
-Plot spectrrum. Plus, if assigned to a variable (= invisibly),
+Plot spectrrum. Plus, if assigned to a variable (invisibly),
    returns the averaged spectrum as a data frame.
 }
 \description{

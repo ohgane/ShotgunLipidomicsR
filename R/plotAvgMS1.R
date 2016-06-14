@@ -4,18 +4,18 @@
 #'    data-dependent acquisition) and plot the spectrum and overlay colored lines over the precursors. Additionally, label some selected peaks.
 #'
 #' @param xcmsraw \code{xcmsRaw} object.
-#' @param normalization Type of normalization for plotting. Default, "constant".
-#'    Either "constant", "relative", or "TIC" (% of total ion current).
+#' @param normalization Type of normalization for plotting.
+#'     Default, constant. Either constant, relative, or TIC (relative to total ion current).
 #' @param int.divide Intensity normalization factor (simple division). Default, 1000.
-#' @param col Default, 1 (=black).
-#' @param type Default, "l" (line).
+#' @param col Default, 1 (black).
+#' @param type Default, l (line).
 #' @param plot.precursor Logical (default, TRUE). If true, plot lines at the precursor m/z values.
 #' @param custom.precursor Default, NULL.
-#' @param col.precursor Default, "light blue".
+#' @param col.precursor Default, light blue.
 #' @param lwd.precursor Default, 2.
 #' @param lty.precursor Default, 1.
 #' @param baseline Logical (default TRUE)
-#' @param col.baseline The color of baseline. Default, "gray50"
+#' @param col.baseline The color of baseline. Default, gray50
 #' @param lty.baseline Line type of baseine. Default, 1.
 #' @param scans A numeric vector of scan indexes. If provided, only the indicated scans are averaged and plotted.
 #' @param mzrange m/z range to plot.
@@ -23,11 +23,11 @@
 #' @param ad.lab. mzrange m/z range to add additional peak labels.
 #' @param ad.top The number of additional peak labels.
 #' @param top The number of peak labels.
-#' @param halfWindowSize See \code{MALDIquant::labelPeaks()} for detail.
-#' @param SNR See \code{MALDIquant::labelPeaks()} for detail.
+#' @param halfWindowSize See \code{labelPeaks} in \code{MALDIquant} for detail.
+#' @param SNR See \code{labelPeaks} in \code{MALDIquant} for detail.
 #' @param digits Digits for peak labels.
 #'
-#' @return Plot spectrrum. Plus, if assigned to a variable (= invisibly),
+#' @return Plot spectrrum. Plus, if assigned to a variable (invisibly),
 #'    returns the averaged spectrum as a data frame.
 #'
 #' @export
