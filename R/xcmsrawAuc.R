@@ -28,7 +28,7 @@ xcmsrawAuc=function(scan, mzrange=NULL, mz=NULL, mzabs=NULL,
   }
   if (type=="profile"){
     if (msLevel==1){
-      dat=getScan(xraw, scan=scan)
+      dat=data.frame(getScan(xraw, scan=scan))
     } else if (msLevel == 2){
       dat=data.frame(getMsnScan(xraw, scan=scan)) # xcms::getMsnScan()
       # Note that the data is converted to data.frame,

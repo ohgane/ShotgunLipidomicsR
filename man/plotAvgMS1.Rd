@@ -16,7 +16,7 @@ plotAvgMS1(xcmsraw, normalization = "constant", int.divide = 1000,
 \item{xcmsraw}{\code{xcmsRaw} object.}
 
 \item{normalization}{Type of normalization for plotting. Default, "constant".
-Either "constant", "relative", or "TIC" (% of total ion current).}
+Either "constant", "relative", or "TIC" (percent of total ion current).}
 
 \item{int.divide}{Intensity normalization factor (simple division). Default, 1000.}
 

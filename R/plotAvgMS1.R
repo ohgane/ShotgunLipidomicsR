@@ -5,7 +5,7 @@
 #'
 #' @param xcmsraw \code{xcmsRaw} object.
 #' @param normalization Type of normalization for plotting. Default, "constant".
-#'    Either "constant", "relative", or "TIC" (% of total ion current).
+#'    Either "constant", "relative", or "TIC" (percent of total ion current).
 #' @param int.divide Intensity normalization factor (simple division). Default, 1000.
 #' @param col Default, 1 (=black).
 #' @param type Default, "l" (line).

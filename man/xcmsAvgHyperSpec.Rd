@@ -2,14 +2,17 @@
 % Please edit documentation in R/xcmsAvgHyperSpec.R
 \name{xcmsAvgHyperSpec}
 \alias{xcmsAvgHyperSpec}
-\title{A function that retrieve averaged spectra from xcmsRaw object as a hyperSpec object}
+\title{A function that retrieve averaged spectra from a xcmsRaw object as a hyperSpec object}
 \usage{
-xcmsAvgHyperSpec(xcmsraw, scans, step = 0.01, mzrange = NULL)
+xcmsAvgHyperSpec(xcmsraw, scans = NULL, msLevel = 1, step = 0.01,
+  mzrange = NULL)
 }
 \arguments{
 \item{xcmsraw}{An object of class \code{xcmsRaw} class}
 
-\item{scans}{A numeric vector}
+\item{scans}{A numeric vector (default NULL returns average of all the scans).}
+
+\item{msLevel}{MS level (MS1 or MS2). Either 1 or 2. Default, 1 (MS1).}
 
 \item{step}{Numeric (default 0.01). The step size of x axis to which
 the raw data is interpolated.}
@@ -21,6 +24,6 @@ By default, the min and max values of m/z in the data are used.}
 Returns an object of class \code{hyperSpec}.
 }
 \description{
-A function that retrieve averaged spectra from xcmsRaw object as a hyperSpec object
+From a xcmsRaw object (with multiple scans), this function returns a hyperSpec object (averaged spectrum). As this function only accepts one object, later merging would be necessary to construct a hyperSpec object with multiple spectra (use rbind()).
 }
 
