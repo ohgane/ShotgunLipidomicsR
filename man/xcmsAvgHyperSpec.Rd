@@ -10,7 +10,7 @@ xcmsAvgHyperSpec(xcmsraw, scans = NULL, msLevel = 1, step = 0.01,
 \arguments{
 \item{xcmsraw}{An object of class \code{xcmsRaw} class}
 
-\item{scans}{A numeric vector (default NULL returns average of all the scans).}
+\item{scans}{A numeric vector (default NULL returns average of all the scans). Scan index within the ms level, not an actual scan number.}
 
 \item{msLevel}{MS level (MS1 or MS2). Either 1 or 2. Default, 1 (MS1).}
 

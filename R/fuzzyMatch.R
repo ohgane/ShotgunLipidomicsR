@@ -16,6 +16,9 @@
 #' @usage sapply(vector, fuzzyMatch, ref, mzabs=1)
 #'
 #' @export
+#'
+#' @examples
+#' fuzzyMatch(1:5, ref=3, ppm=10)
 
 # Older version
 #fuzzyMatch=function(query, ref, mzabs=0, ppm=5){

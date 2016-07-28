@@ -25,4 +25,7 @@ This function accepts a query vector and a reference value to search,
     within the tolerance of reference value.
     The larger of the \code{mzabs} or \code{ppm} is used as tolerance.
 }
+\examples{
+fuzzyMatch(1:5, ref=3, ppm=10)
+}
 
